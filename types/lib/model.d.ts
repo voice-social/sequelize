@@ -762,6 +762,11 @@ export interface BulkCreateOptions<TAttributes = any> extends Logging, Transacti
   updateOnDuplicate?: (keyof TAttributes)[];
 
   /**
+   * Fields that should trigger a row conflict (only supported by MySQL, MariaDB, SQLite >= 3.24.0 & Postgres >= 9.5).
+   */
+  upsertKeys?: (keyof TAttributes)[];
+
+  /**
    * Include options. See `find` for details
    */
   include?: Includeable | Includeable[];
